@@ -46,3 +46,4 @@ function clickImages(event){
         instance.close()
     }
 }
+console.log(basicLightbox);
