@@ -18,7 +18,6 @@ function createLightboxGallery(array){
                 </li>`           
     }).join('')
 }
-console.log(createLightboxGallery(galleryItems));
 
 function addToHtml(container){
     container.innerHTML = createLightboxGallery(galleryItems)
@@ -26,9 +25,11 @@ function addToHtml(container){
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
-    captionDelay: 250
+    captionDelay: 250,
+    preload: false
 })
 
-function showImage(){
-    lightbox.on('show.simplelightbox')
+function showImage(event){
+    event.preventDefault()
+    lightbox.open();
 }
